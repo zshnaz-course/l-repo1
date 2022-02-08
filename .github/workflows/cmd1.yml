@@ -1,0 +1,13 @@
+name: Commands Set 1 -- Shell Commands
+on: [push]
+jobs:
+  check-version:
+    runs-on: ubuntu-latest
+    steps:
+      - name: intro message
+        run: echo "Checking tools version"
+      - name: multi-line check
+        run: |
+          node -v 
+          npm -v 
+          

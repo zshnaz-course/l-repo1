@@ -5,9 +5,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: intro message
-        run: echo "Checking tools version, aisay hee"
+        run: echo "Checking tools version"
       - name: multi-line check
         run: |
           node -v 
           npm -v 
-          
+      - name: Processor check using python
+        run: |
+          import platform
+          print(platform.processor())
+        shell: python

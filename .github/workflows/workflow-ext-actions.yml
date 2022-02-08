@@ -1,0 +1,15 @@
+name: Workflow referencing external actions
+on: [push]
+
+jobs:
+  ext-action: 
+    runs-on: ubuntu-latest
+    steps:
+      - name: greet JS action
+        id: greet
+        uses: actions/hello-world-javascript-action@v1
+        with:
+          who-to-greet: Best Person
+      - name: Log Greeting message
+        run: echo "${{steps.greet.outputs.time}} greeting to ${{steps.greet.inputs.who-to-greet}}"
+        shell: bash

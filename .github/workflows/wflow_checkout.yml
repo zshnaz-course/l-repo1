@@ -1,0 +1,19 @@
+name: Verifying actions/checkout action
+on: [push]
+
+jobs:
+  cur-dir:
+    name: Job 1 - checkout 
+    runs-on: ubuntu-latest
+    steps:
+      - name: ls before checkout
+        run: |
+          pwd 
+          ls -a 
+      - name: checkout
+        uses: actions/checkout@v1
+      - name: ls after checkout
+        run: |
+          pwd 
+          ls -a
+

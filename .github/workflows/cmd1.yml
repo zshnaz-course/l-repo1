@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: intro message
-        run: echo "Checking tools version"
+        run: echo "Checking tools version, aisay hee"
       - name: multi-line check
         run: |
           node -v 

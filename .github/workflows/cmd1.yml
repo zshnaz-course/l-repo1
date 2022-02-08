@@ -15,3 +15,13 @@ jobs:
           import platform
           print(platform.processor())
         shell: python
+  
+  directory-check:
+    runs-on: windows-latest
+    needs: ['check-version']
+    steps:
+      - name: PWD using default Powershell
+        run: Get-Location
+      - name: PWD using bash on windows-latest
+        run: PWD
+        shell: bash
